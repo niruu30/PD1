@@ -149,7 +149,7 @@ const quizData = [
         question: "What should a developer use to obtain the Id and Name of all the Leads. Accounts, and Contacts that hove the company name 'Universal Containers'?",
         options: [
             { letter: "A", text: "FIND 'Universal Containers' IN Name Fields RETURNING lead(id, name), accounted, name), contacted, name)" },
-            { letter: "B", text: "FIND Universal Containers' IN CompanyName Fietds RETURNING lead{ld. name), accounted, name), contacted, name)" },
+            { letter: "B", text: "FIND Universal Containers' IN CompanyName Fields RETURNING lead{ld. name), accounted, name), contacted, name)" },
             { letter: "C", text: "SELECT lead(id, name). accountOd, name), contacted, name) FROM Lead, Account, Contact WHERE Name = 'universal Containers'" },
             { letter: "D", text: "SELECT Lead.id. Lead.Name, Account.Id, AccountName, Contacted, Contact.Name FROM Lead, Account, Contact WHERE CompanvName * Universal Containers'" }
         ],
@@ -1169,7 +1169,7 @@ const quizData = [
     {
         id: "q97",
         isMultiple: true,
-        question: "Given: Map&ltID, Account&gt accountMap = new Map&ltID, Account&gt ([SELECT Id, Name FROM Account]); What are three valid Apex loop structures for iterating through items in the collection? (Choose three.)",
+        question: "Given: Map <ID, Account> accountMap = new Map<ID, Account> ([SELECT Id, Name FROM Account]); What are three valid Apex loop structures for iterating through items in the collection? (Choose three.)",
         options: [
             { letter: "A", text: "for (Account accountRecord : accountMap.keySet()) {...}" },
             { letter: "B", text: "for (Integer i=0; I &lt accountMap.size(); i++) {...}" },
@@ -1233,7 +1233,7 @@ const quizData = [
         question: "When viewing a Quote, the sales representative wants to easily see how many discounted items are included in the Quote Line Items. What should a developer do to meet this requirement?",
         options: [
             { letter: "A", text: "Create a trigger on the Quote object that queries the Quantity field on discounted Quote Line Items." },
-            { letter: "B", text: "Create a Workflow Rule on the Quote Line Item object that updates a field on the parent Quote when the item is discounted" },
+            { letter: "B", text: "Create a roll-up summary field on the Quote object that performs a SUM on the quote Line Item Quantity field, filtered for only discounted Quote Line Items." },
             { letter: "C", text: "Create a Workflow Rule on the Quote Line Item object that updates a field on the parent Quote when the item is discounted." },
             { letter: "D", text: "Create a formula field on the Quote object that performs a SUM on the Quote Line Item Quantity field, filtered for only discounted Quote Line Items." }
         ],
@@ -1314,14 +1314,14 @@ const quizData = [
     {
         id: "q109",
         isMultiple: false,
-        question: "A developer Is asked to create a Visualforce page that lists the contacts owned by the current user. This component will be embedded In a Lightning page. Without writing unnecessary code, which controller should be used for this purpose?",
+        question: "A developer is asked to create a Visualforce page that lists the contacts owned by the current user. This component will be embedded In a Lightning page. Without writing unnecessary code, which controller should be used for this purpose?",
         options: [
             { letter: "A", text: "Standard list controller" },
             { letter: "B", text: "Lightning controller" },
             { letter: "C", text: "Custom controller" },
             { letter: "D", text: "Standard controller" }
         ],
-        answer: ""
+        answer: "A"
     },
     {
         id: "q110",
@@ -1451,6 +1451,214 @@ const quizData = [
             { letter: "B", text: "The helper class creates a savepoint and continues" },
             { letter: "C", text: "All changes made by the custom controller are saved" },
             { letter: "D", text: "The custom controller calls the helper class method again" }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q121",
+        isMultiple: true,
+        imageUrl: "pics/img1.png",
+        question: "Given the following code snippet, that is part of a custom controller for a Visualforce page. In which two ways can the try/catch be enclosed to enforce object and field-level permissions and prevent the DML statement from being executed if the current logged-in user does not have the appropriate level of access? Choose 2 answers",
+        options: [
+            { letter: "A", text: "Use if (Schema, sobjectType, Contact, isUpdatable())" },
+            { letter: "B", text: "Use if (Schema , sobjectType. Contact. Field, Is_Active_c. is Updateable())" },
+            { letter: "C", text: "Use if (Schema.sObjectType.Contact.isAccessible())" },
+            { letter: "D", text: "Use if (thisContact.Owner = = UserInfo.getuserId())" }
+        ],
+        answer: ["A", "B"]
+    },
+    {
+        id: "q122",
+        isMultiple: false,
+        imageUrl: "pics/img2.png",
+        question: "A lead developer creates an Apex interface called 'Laptop'. Consider the following code snippet. How can a developer use the Laptop Interface within the Silverlaptop class?",
+        options: [
+            { letter: "A", text: "@Extends(class='Laptop') public class SilverLaptop" },
+            { letter: "B", text: "public calss SilverLaptop extends Laptop" },
+            { letter: "C", text: "@Interface (class='Laptop') public class SilverLaptop" },
+            { letter: "D", text: "public class Silverlaptop implements Laptop" }
+        ],
+        answer: "D"
+    },
+    {
+        id: "q123",
+        isMultiple: false,
+        imageUrl: "pics/img3.png",
+        question: "Refer to the following Apex code. What is the value of x when it is written to the debug log?",
+        options: [
+            { letter: "A", text: "0" },
+            { letter: "B", text: "1" },
+            { letter: "C", text: "2" },
+            { letter: "D", text: "3" }
+        ],
+        answer: "C"
+    },
+    {
+        id: "q124",
+        isMultiple: false,
+        imageUrl: "pics/img4.png",
+        question: "Refer to the following code snippet for an environment has more than 200 Accounts belonging to the 'Technology' industry. When the code execution, which two events occur as a result of the Apex transaction?",
+        options: [
+            { letter: "A", text: "If executed in an asynchronous context, the apex transaction is likely to fall by exceeding the DML governor limit" },
+            { letter: "B", text: "The Apex transaction fails with the following message. 'SObject row was retrieved via SOQL without querying the requested field Account.Is.Tech__c'." },
+            { letter: "C", text: "The Apex transaction succeeds regardless of any uncaught exception and all processed accounts are updated." },
+            { letter: "D", text: "If executed In a synchronous context, the apex transaction is likely to fall by exceeding the DHL governor limit." }
+        ],
+        answer: "B"
+    },
+    {
+        id: "q125",
+        isMultiple: false,
+        imageUrl: "pics/img5.png",
+        question: "The following code snippet is executed by a Lightning web component in an environment with more than 2,000 lead records. Which governor limit will likely be exceeded within the Apex transaction?",
+        options: [
+            { letter: "A", text: "Total number of DML statement issued" },
+            { letter: "B", text: "Total number of records processed as a result of DML statements" },
+            { letter: "C", text: "Total number of SOQL queries issued" },
+            { letter: "D", text: "Total number of records retrieved by SOQL queries" }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q126",
+        isMultiple: false,
+        imageUrl: "pics/img6.png",
+        question: "Based on this code, what is the value of x?",
+        options: [
+            { letter: "A", text: "2" },
+            { letter: "B", text: "1" },
+            { letter: "C", text: "4" },
+            { letter: "D", text: "3" }
+        ],
+        answer: "C"
+    },
+    {
+        id: "q127",
+        isMultiple: false,
+        imageUrl: "pics/img7.png",
+        question: "Given the code below. What should a developer do to correct the code so that there is no chance of hitting a governor limit?",
+        options: [
+            { letter: "A", text: "Rework the code and eliminate the for loop." },
+            { letter: "B", text: "Combine the two SELECT statements into a single SOQL statement." },
+            { letter: "C", text: "Add a LIMIT clause to the first SELECT SOQL statement." },
+            { letter: "D", text: "Add a WHERE clause to the first SELECT SOQL statement." }
+        ],
+        answer: "B"
+    },
+    {
+        id: "q128",
+        isMultiple: false,
+        imageUrl: "pics/img8.png",
+        question: "What is the result of the debug statements in testMethod3 when you create test data using testSetup in below code?",
+        options: [
+            { letter: "A", text: "Account0.Phone=333-8781, Account1.Phone=333-8780" },
+            { letter: "B", text: "Account0.Phone=888-1515, Account1.Phone=999-1515" },
+            { letter: "C", text: "Account0.Phone=888-1515, Account1.Phone=999-2525" },
+            { letter: "D", text: "Account0.Phone=333-8780, Account1.Phone=333-8781" }
+        ],
+        answer: "D"
+    },
+    {
+        id: "q129",
+        isMultiple: false,
+        imageUrl: "pics/img9.png",
+        question: "Given the following Anonymous Block. What should a developer consider for an environment that has over10,000 Case records?",
+        options: [
+            { letter: "A", text: "The transaction will succeed and changes will be committed." },
+            { letter: "B", text: "The transaction will fail due to exceeding the governor limit." },
+            { letter: "C", text: "The try/catch block will handle any DML exceptions thrown." },
+            { letter: "D", text: "The try/catch block will handle exceptions thrown by governor limits." }
+        ],
+        answer: "B"
+    },
+    {
+        id: "q130",
+        isMultiple: false,
+        imageUrl: "pics/img10.png",
+        question: "Considering the following code snippet. When the code executes, a DML exception is thrown. How should the developer modify the code to ensure exceptions are handled gracefully?",
+        options: [
+            { letter: "A", text: "Implement the upsert DML statement." },
+            { letter: "B", text: "Implement Change Data Capture." },
+            { letter: "C", text: "Remove null items from the list if Accounts." },
+            { letter: "D", text: "Implement a try/catch block for the DML." }
+        ],
+        answer: "D"
+    },
+    {
+        id: "q131",
+        isMultiple: false,
+        imageUrl: "pics/img11.png",
+        question: "What will be the output in the debug log in the event of a QueryExeption during a call to the @query method in the following Example?",
+        options: [
+            { letter: "A", text: "Querying Accounts. Custom Exception." },
+            { letter: "B", text: "Querying Accounts. Custom Exception Done." },
+            { letter: "C", text: "Querying Accounts. Query Exception." },
+            { letter: "D", text: "Querying Accounts. Query Exception. Done" }
+        ],
+        answer: "D"
+    },
+    {
+        id: "q132",
+        isMultiple: true,
+        question: "Which three statements are accurate about debug logs? Choose 3 answers.",
+        options: [
+            { letter: "A", text: "Debug logs can be set for specific users, classes, and triggers." },
+            { letter: "B", text: "Debug log levels are cumulative, where FINE log level includes all events logged at the DEBUG, INFO, WARN, and ERROR levels." },
+            { letter: "C", text: "System debug logs are retained for 24 hours." },
+            { letter: "D", text: "The maximum size of a debug log is 5 MB." },
+            { letter: "E", text: "Only the 20 most recent debug logs for a user are kept." }
+        ],
+        answer: ["A", "B", "C"]
+    },
+    {
+        id: "q133",
+        isMultiple: false,
+        imageUrl: "pics/img12.png",
+        question: "A lead object has a custom field Prior_Email__c. The following trigger is intended to copy the current Email into the Prior_Email__c field any time the Email field is changed. Which type of exception will this trigger cause?",
+        options: [
+            { letter: "A", text: "A DML exception" },
+            { letter: "B", text: "A null reference exception" },
+            { letter: "C", text: "A compile time exception" },
+            { letter: "D", text: "A limit exception when doing a bulk update" }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q134",
+        isMultiple: true,
+        imageUrl: "pics/img13.png",
+        question: "As a part of class implementation a developer must execute a SOQL query against a large data set based on the contact object. The method implementation is as follows. Which two methods are best practice to implement heap size control for the above code? (Choose 2 Answers)",
+        options: [
+            { letter: "A", text: "Use a SOQL FOR loop, to chunk the result set in batches of 200 records." },
+            { letter: "B", text: "Use visual keyword when declaring the retrieve variable." },
+            { letter: "C", text: "Use WHERE clauses on the SOQL query to reduce the number of records retrieved." },
+            { letter: "D", text: "Use the FOR UPDATE option on the SOQL query to lock down the records retrieved." }
+        ],
+        answer: ["A", "C"]
+    },
+    {
+        id: "q135",
+        isMultiple: false,
+        imageUrl: "pics/img14.png",
+        question: "A developer is building custom search functionality that uses SOSL to search account and contact records that match search terms provided by the end user. The feature is exposed through a Lightning web component, and the end user is able to provide a list of terms to search. Consider the following code snippet. What is the maximum number of search terms the end user can provide to successfully execute the search without exceeding a governor limit?",
+        options: [
+            { letter: "A", text: "2,000" },
+            { letter: "B", text: "20" },
+            { letter: "C", text: "200" },
+            { letter: "D", text: "150" }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q136",
+        isMultiple: false,
+        imageUrl: "pics/img15.png",
+        question: "A developer has the controller class below. Which code block will run successfully in an execute anonymous window?",
+        options: [
+            { letter: "A", text: "myFooController m = new myFooController();System.assert(m.prop ==null);" },
+            { letter: "B", text: "myFooController m = new myFooController();System.assert(m.prop !=null);" },
+            { letter: "C", text: "myFooController m = new myFooController();System.assert(m.prop ==0);" },
+            { letter: "D", text: "myFooController m = new myFooController();System.assert(m.prop ==1);" }
         ],
         answer: "A"
     },

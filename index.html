@@ -13,6 +13,7 @@
             <div class="quiz-container">
                 <h2>Platform Developer I</h2>
                 <div class="question" id="question"></div>
+                <div class="imgquestion" id="imgquestion"></div>
                 <div class="options" id="options"></div>
                 <div class="button-container">
                     <button id="submitBtn" onclick="checkAnswer()">Submit</button>
@@ -30,6 +31,7 @@
             let qnum = 0;
             
             const questionElement = document.getElementById("question");
+            const imgquestionElement = document.getElementById("imgquestion");
             const optionsElement = document.getElementById("options");
             const answerElement = document.getElementById("answer");
             const submitButton = document.getElementById("submitBtn");
@@ -46,9 +48,11 @@
             }
 
             function loadQuestion() {
-                if (currentQuestion >= 65) {
-                    resultElement.textContent = `You scored ${score} out of ${65}`;
+                let answeredQuestionsHTML = "<h3>Answered Questions:</h3>";
+                if (currentQuestion >= 60) {
+                    resultElement.textContent = `You scored ${score} out of ${60}`;
                     questionElement.style.display = "none"; // Hide question
+                    imgquestionElement.style.display = "none"; // Hide question
                     optionsElement.style.display = "none"; // Hide options
                     answerElement.style.display = "none"; // Hide answer
                     submitButton.style.display = "none"; // Hide submit button
@@ -58,7 +62,13 @@
             
                 qnum++;
                 const currentQuizData = shuffledQuestions[currentQuestion];
-                questionElement.textContent = `Question ${qnum}: ${currentQuizData.question}`;
+
+                if(currentQuizData.imageUrl) {
+                    imgquestionElement.innerHTML = `<img src="${currentQuizData.imageUrl}" alt="Question ${qnum}">`;
+                    questionElement.textContent = `Question ${qnum}: ${currentQuizData.question}`;
+                } else {
+                    questionElement.textContent = `Question ${qnum}: ${currentQuizData.question}`;
+                }
                 optionsElement.innerHTML = "";
                 answerElement.textContent = ""; // Clear previous answer
                 submitButton.disabled = false; // Enable submit button
