@@ -64,6 +64,7 @@
                 const currentQuizData = shuffledQuestions[currentQuestion];
 
                 if(currentQuizData.imageUrl) {
+                    imgquestionElement.style.display = "block";
                     imgquestionElement.innerHTML = `<img src="${currentQuizData.imageUrl}" alt="Question ${qnum}">`;
                     questionElement.textContent = `Question ${qnum}: ${currentQuizData.question}`;
                 } else {

@@ -788,7 +788,7 @@ const quizData = [
     {
         id: "q66",
         isMultiple: true,
-        question: "A development team wants to use a deployment script lo automatically deploy lo a sandbox during their development cycles. Which two tools can they use to run a script that deploys to a sandbox?",
+        question: "A development team wants to use a deployment script to automatically deploy to a sandbox during their development cycles. Which two tools can they use to run a script that deploys to a sandbox?",
         options: [
             { letter: "A", text: "VS Code" },
             { letter: "B", text: "Developer Console" },
