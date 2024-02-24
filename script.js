@@ -206,7 +206,7 @@ const quizData = [
     {
         id: "q18",
         isMultiple: false,
-        question: "Universal Containers has a Visualforce page that displays a table of every Container_c. being ....... Is falling with a view state limit because some of the customers rent over 10,000 containers. What should a developer change about the Visualforce page to help with the page load errors?",
+        question: "Universal Containers has a Visualforce page that displays a table of every Container_c being rented by a given Account. Recently this page failing with a view state limit because some of the customers rent over 10,000 containers. What should a developer change about the Visualforce page to help with the page load errors?",
         options: [
             { letter: "A", text: "Implement pagination with an OffsetController." },
             { letter: "B", text: "Use JavaScript remoting with SOQL Offset." },
@@ -441,7 +441,7 @@ const quizData = [
             { letter: "C", text: "The record will be created and a message will be in the debug log." },
             { letter: "D", text: "The record will not be created and no error will be reported." }
         ],
-        answer: ""
+        answer: "D"
     },
     {
         id: "q38",
@@ -474,7 +474,7 @@ const quizData = [
         options: [
             { letter: "A", text: "Use Test.loadData ( )and a static resource to load a standard price book" },
             { letter: "B", text: "Use @TestVisible to allow the test method to see the standard price book." },
-            { letter: "C", text: "Use Test,getStandardPricebookid ( ) to get the standard price book ID." },
+            { letter: "C", text: "Use Test.getStandardPricebookid() to get the standard price book ID." },
             { letter: "D", text: "Use @IsTest (SeeAllData=True) and delete the existing standard price book" }
         ],
         answer: "C"
@@ -689,14 +689,15 @@ const quizData = [
     {
         id: "q58",
         isMultiple: true,
-        question: "",
+        question: "Which three options allow a developer to use custom styling in a Visualforce page? (Choose 3.)",
         options: [
-            { letter: "A", text: "" },
-            { letter: "B", text: "" },
-            { letter: "C", text: "" },
-            { letter: "D", text: "" }
+            { letter: "A", text: "A static resource" },
+            { letter: "B", text: "&ltapex:stylesheets&gttag" },
+            { letter: "C", text: "&ltapex:style&gttag" },
+            { letter: "D", text: "&ltapex:stylesheet&gt tag" },
+            { letter: "E", text: "Inline CSS" }
         ],
-        answer: ["", ""]
+        answer: ["A", "D", "E"]
     },
     {
         id: "q59",
@@ -1020,7 +1021,7 @@ const quizData = [
     {
         id: "q85",
         isMultiple: true,
-        question: "A developer needs to create a custom button for the Account object that, when clicked, will perform a series of calculation and redirect the user to a custom visualforce page. Which three attributes need to be defined with values in the <apex:page> tag to accomplish this? Choose 3 answers",
+        question: "A developer needs to create a custom button for the Account object that, when clicked, will perform a series of calculation and redirect the user to a custom visualforce page. Which three attributes need to be defined with values in the &ltapex:page&gt tag to accomplish this? Choose 3 answers",
         options: [
             { letter: "A", text: "standard Controller" },
             { letter: "B", text: "readOnly" },
@@ -1126,7 +1127,7 @@ const quizData = [
             { letter: "C", text: "Use a Trigger." },
             { letter: "D", text: "Use a Visual Workflow." }
         ],
-        answer: ["", ""]
+        answer: ["A", "C"]
     },
     {
         id: "q94",
@@ -1205,7 +1206,7 @@ const quizData = [
     {
         id: "q100",
         isMultiple: true,
-        question: "A developer needs to create a custom Visualforce button for the Opportunity object page layout that will cause a web service to be called and redirect the user to a new page when clicked. Which three attributes need to be defined in the <apex:page> tag of the Visualforce page to enable this functionality? Choose three answers.",
+        question: "A developer needs to create a custom Visualforce button for the Opportunity object page layout that will cause a web service to be called and redirect the user to a new page when clicked. Which three attributes need to be defined in the &ltapex:page&gt tag of the Visualforce page to enable this functionality? Choose three answers.",
         options: [
             { letter: "A", text: "Controller" },
             { letter: "B", text: "StandardController" },
@@ -1213,5 +1214,244 @@ const quizData = [
             { letter: "D", text: "Extensions" }
         ],
         answer: ["B", "C", "D"]
+    },
+    {
+        id: "q101",
+        isMultiple: false,
+        question: "A developer creates a new Apex trigger with a helper class, and writes a test class that only exercises 95% coverage of new Apex helper class. Change Set deployment to production fails with the test coverage warning: 'Test coverage of selected Apex Trigger is 0%, at least 1% test coverage is required' What should the developer do to successfully deploy the new Apex trigger and helper class?",
+        options: [
+            { letter: "A", text: "Increase the test class coverage on the helper class" },
+            { letter: "B", text: "Remove the falling test methods from the test class." },
+            { letter: "C", text: "Create a test class and methods to cover the Apex trigger" },
+            { letter: "D", text: "Run the tests using the 'Run All Tests' method." }
+        ],
+        answer: "C"
+    },
+    {
+        id: "q102",
+        isMultiple: false,
+        question: "When viewing a Quote, the sales representative wants to easily see how many discounted items are included in the Quote Line Items. What should a developer do to meet this requirement?",
+        options: [
+            { letter: "A", text: "Create a trigger on the Quote object that queries the Quantity field on discounted Quote Line Items." },
+            { letter: "B", text: "Create a Workflow Rule on the Quote Line Item object that updates a field on the parent Quote when the item is discounted" },
+            { letter: "C", text: "Create a Workflow Rule on the Quote Line Item object that updates a field on the parent Quote when the item is discounted." },
+            { letter: "D", text: "Create a formula field on the Quote object that performs a SUM on the Quote Line Item Quantity field, filtered for only discounted Quote Line Items." }
+        ],
+        answer: "B"
+    },
+    {
+        id: "q103",
+        isMultiple: false,
+        question: "Which statement generates a list of Leads and Contacts that have a field with the phrase 'ACME'?",
+        options: [
+            { letter: "A", text: "List&ltList &ltsObject&gt&gt searchList = (FIND '*ACME*' IN ALL FIELDS RETURNING Contact, Lead);" },
+            { letter: "B", text: "Map &ltsObject&gt searchList = (FIND '*ACME*' IN ALL FIELDS RETURNING Contact, Lead);" },
+            { letter: "C", text: "List &ltsObject&gt searchList = (FIND '*ACME*' IN ALL FIELDS RETURNING Contact, Lead);" },
+            { letter: "D", text: "List&ltList &lt sObject&gt&gt searchList = (SELECT Name, ID FROM Contact, Lead WHERE Name like '%ACME%');" }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q104",
+        isMultiple: false,
+        question: "A developer needs to join data received from an integration with an external system with parent records in Salesforce. The data set does not contain the Salesforce IDs of the parent records, but it does have a foreign key attribute that can be used to identify the parent. Which action will allow the developer to relate records in the data model without knowing the Salesforce ID?",
+        options: [
+            { letter: "A", text: "Create a custom field on the child object of type External Relationship." },
+            { letter: "B", text: "Create and populate a custom field on the parent object marked as Unique." },
+            { letter: "C", text: "Create and populate a custom field on the parent object marked as an External ID." },
+            { letter: "D", text: "Create a custom field on the child object of type Foreign Key." }
+        ],
+        answer: "C"
+    },
+    {
+        id: "q105",
+        isMultiple: false,
+        question: "Which approach should be used to provide test data for a test class?",
+        options: [
+            { letter: "A", text: "Use a test data factory class to create test data." },
+            { letter: "B", text: "Access data in @TestVisible class variables." },
+            { letter: "C", text: "Query for existing records in the database." },
+            { letter: "D", text: "Execute anonymous code blocks that create data." }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q106",
+        isMultiple: false,
+        question: "A developer needs to confirm that a Contact trigger works correctly without changing the organization's data. What should the developer do to test the Contact trigger?",
+        options: [
+            { letter: "A", text: "Use the Open execute Anonymous feature on the Developer Console to run an 'insert Contact' DMLstatement" },
+            { letter: "B", text: "Use the Test menu on the Developer Console to run all test classes for the Contact trigger" },
+            { letter: "C", text: "Use Deploy from the VSCode IDE to display an 'insert Contact' Apex class." },
+            { letter: "D", text: "Use the New button on the Salesforce Contacts Tab to create a new Contact record." }
+        ],
+        answer: "B"
+    },
+    {
+        id: "q107",
+        isMultiple: false,
+        question: "A developer is creating a Visualforce page that allows users to create multiple Opportunities. The developer is asked to verify the current user's default Opportunity record type, and set certain default values based on the record type before inserting the record. How can the developer find the current user's default record type?",
+        options: [
+            { letter: "A", text: "Query the Profile where the ID equals userInfo.getProfileID() and then use the profile.Opportunity.getDefaultRecordType() method." },
+            { letter: "B", text: "Use Opportunity.SObjectType.getDescribe().getRecordTypeInfos() to get a list of record types, and iterate trought them until isdefaultRecordTypeMapping() is true." },
+            { letter: "C", text: "Use the Schema.userInfo.Opportunity.getDefaultRecordType() method." },
+            { letter: "D", text: "Create the opportunity and check the opportunity.recordType before inserting, which will have the record ID of the current user's default record type" }
+        ],
+        answer: "B"
+    },
+    {
+        id: "q108",
+        isMultiple: false,
+        question: "A PrimaryId_c custom field exists on the candidate_c custom object. The filed is used to store each candidate's id number and is marked as Unique in the schema definition. As part of a data enrichment process. Universal Containers has a CSV file that contains updated data for all candidates in the system, f he file contains each Candidate's primary id as a data point. Universal Containers wants to upload this information into Salesforce, while ensuring all data rows are correctly mapped to a candidate in the system. Which technique should the developer implement to streamline the data upload?",
+        options: [
+            { letter: "A", text: "A Update the PrimaryId_c field definition to mark it as an External Id." },
+            { letter: "B", text: "Create a before Insert trigger to correctly map the records." },
+            { letter: "C", text: "Create a Process Builder on the Candidate_c object to map the records." },
+            { letter: "D", text: "Upload the CSV into a custom object related to Candidate_c." }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q109",
+        isMultiple: false,
+        question: "A developer Is asked to create a Visualforce page that lists the contacts owned by the current user. This component will be embedded In a Lightning page. Without writing unnecessary code, which controller should be used for this purpose?",
+        options: [
+            { letter: "A", text: "Standard list controller" },
+            { letter: "B", text: "Lightning controller" },
+            { letter: "C", text: "Custom controller" },
+            { letter: "D", text: "Standard controller" }
+        ],
+        answer: ""
+    },
+    {
+        id: "q110",
+        isMultiple: false,
+        question: "How can a developer determine, from the DescribeSObjectResult, if the current user will be able to create records for an object in Apex?",
+        options: [
+            { letter: "A", text: "By using the hasAccess() method." },
+            { letter: "B", text: "By using the canCreate() method." },
+            { letter: "C", text: "By using the isCreatable() method." },
+            { letter: "D", text: "By using the isInsertable() method." }
+        ],
+        answer: "C"
+    },
+    {
+        id: "q111",
+        isMultiple: false,
+        question: "A developer is creating an enhancement to an application that will allow people to be related to their employer. Which date model should be used to track the data?",
+        options: [
+            { letter: "A", text: "Create a master detail relationship to indicate that a person has an employer." },
+            { letter: "B", text: "Create a junction object to relate many people to many employers trough lookup relationship." },
+            { letter: "C", text: "Create a junction object to relate many people to many employers trough master-detail relationship." },
+            { letter: "D", text: "Create a lookup relationship to indicate that a person has an employer." }
+        ],
+        answer: "D"
+    },
+    {
+        id: "q112",
+        isMultiple: false,
+        question: "A developer has requirement to write Apex code to update a large number of account records on a nightly basis. The system administrator needs to be able to schedule the class to run after business hours on an as-needed basis. Which class definition should be used to successfully implement this requirement?",
+        options: [
+            { letter: "A", text: "Gloabal inherited sharing class processAccount Processor implements Database&gtBachable&ltsObject&gt Schedulable." },
+            { letter: "B", text: "Global inherited sharing class ProcessAccountProcess Implements Queueable" },
+            { letter: "C", text: "Global inherited sharing class ProcessAccountProcessor implements Database. Batchable&ltsObject&gt" },
+            { letter: "D", text: "Global inherited sharing class ProcessAccount Process implements Queueable" }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q113",
+        isMultiple: false, question: "A developer is tasked with performing a complex validation using Apex as part of advanced business logic. certain criteria are met for a PurchaseOrder, the developer must throw a custom exception. What is the correct way for the developer to declare a class that can be used as an exception?",
+        options: [
+            { letter: "A", text: "public class PurchaseOrderException implements Exception ()" },
+            { letter: "B", text: "public class PurchaseOrder extends Exception ()" },
+            { letter: "C", text: "public class PurchaseOrder implements Exception ()" },
+            { letter: "D", text: "public class PurchaseOrderException extends Exception ()" }
+        ],
+        answer: "D"
+    },
+    {
+        id: "q114",
+        isMultiple: false,
+        question: "A developer must provide a custom user interface when users edit a Contact. Users must be able to use the interface in Salesforce Classic and Lightning Experience. What should the developer do to provide the custom user interface?",
+        options: [
+            { letter: "A", text: "A. Override the Contact's Edit button with a Lightning component in Salesforce Classic and a Lightning component in Lightning experience." },
+            { letter: "B", text: "Override the Contact's Edit button with a Lightning page Salesforce Classic and a Visualforce page in Lightning Experience." },
+            { letter: "C", text: "Override the Contact's Edit button with a Visualforce page in Salesforce Classic and a Lightning page in Lightning experience." },
+            { letter: "D", text: "Override the Contact's Edit button with a Visualforce page in Salesforce Classic and a Lightning component in Lightning Experience." }
+        ],
+        answer: "D"
+    },
+    {
+        id: "q115",
+        isMultiple: false,
+        question: "A developer must modify the following code snippet to prevent the number of SOQL queries issued from exceeding the platform governor limit. public class without sharing OpportunityService( public static List&ltOpportunityLineItem&gt getOpportunityProducts(Set&ltId&gt opportunityIds){ List&ltOpportunitylineItem&gt oppLineItems = new List&ltOpportunityLineItem&gt(); for(Id thisOppId : opportunityIds){ oppLineItems.addAll([Select Id FROM OpportunityLineItems WHERE OpportunityId = :thisOppId)]; } return oppLineItems; } } The above method might be called during a trigger execution via a Lightning component. Which technique should be implemented to avoid reaching the governor limit?",
+        options: [
+            { letter: "A", text: "Refactor the code above to perform only one SOQL query, filtering by the Set of opportunityIds." },
+            { letter: "B", text: "Refector the code above to perform the SOQL query only if the Set of opportunityIds contains less 100 Ids." },
+            { letter: "C", text: "Use the System.Limits.getlimitQueries() method to ensure the number of queries is less than 100." },
+            { letter: "D", text: "Use the System.Limits.getQueries() method to ensure the number of queries is less than 100." }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q116",
+        isMultiple: false,
+        question: "Which statement about the Lookup Relationship between a Custom Object and a Standard Object is correct?",
+        options: [
+            { letter: "A", text: "The Custom Object will be deleted when the referenced Standard Object is deleted." },
+            { letter: "B", text: "The Lookup Relationship cannot be marked as required on the page layout for the Custom Object." },
+            { letter: "C", text: "The Lookup Relationship on the Custom Object can prevent the deletion of the Standard Object." },
+            { letter: "D", text: "The Custom Object inherits security from the referenced Standard Objects." }
+        ],
+        answer: "C"
+    },
+    {
+        id: "q117",
+        isMultiple: false,
+        question: "What is a correct pattern to follow when programming in Apex on a Multi-tenant platform?",
+        options: [
+            { letter: "A", text: "Queries select the fewest fields and records possible to avoid exceeding governor limits." },
+            { letter: "B", text: "Apex code is created in a separate environment from schema to reduce deployment errors." },
+            { letter: "C", text: "DML is performed on one record at a time to avoid possible data concurrency issues." },
+            { letter: "D", text: "Apex classes use the 'with sharing' keyword to prevent access from other server tenants." }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q118",
+        isMultiple: false,
+        question: "Universal Containers stores Orders and Line Items in Salesforce. For security reason, financial representatives are allowed to see information on the Order such as order amount, but they are not allowed to see the Line items on the Order. Which type of relationship should be used?",
+        options: [
+            { letter: "A", text: "Master Detail" },
+            { letter: "B", text: "Indirect lookup" },
+            { letter: "C", text: "Lookup" },
+            { letter: "D", text: "Direct Lookup" }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q119",
+        isMultiple: false,
+        question: "How should a custom user interface be provided when a user edits an Account in Lightning Experience?",
+        options: [
+            { letter: "A", text: "Override the Account's Edit button with Lightning Flow" },
+            { letter: "B", text: "Override the Account's Edit button with Lightning component." },
+            { letter: "C", text: "Override the Account's Edit button with Lightning page." },
+            { letter: "D", text: "Overridethe Account's Edit button with Lightning Action" }
+        ],
+        answer: "B"
+    },
+    {
+        id: "q120",
+        isMultiple: false,
+        question: "A developer created a visualforce page using a custom controller that calls an apex helper class. A method in the helper class hits a governor limit. what is the result of the transaction?",
+        options: [
+            { letter: "A", text: "All changes in the transaction are rolled back" },
+            { letter: "B", text: "The helper class creates a savepoint and continues" },
+            { letter: "C", text: "All changes made by the custom controller are saved" },
+            { letter: "D", text: "The custom controller calls the helper class method again" }
+        ],
+        answer: "A"
     },
 ];
