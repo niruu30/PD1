@@ -67,6 +67,7 @@
                     imgquestionElement.innerHTML = `<img src="${currentQuizData.imageUrl}" alt="Question ${qnum}">`;
                     questionElement.textContent = `Question ${qnum}: ${currentQuizData.question}`;
                 } else {
+                    imgquestionElement.style.display = "none";
                     questionElement.textContent = `Question ${qnum}: ${currentQuizData.question}`;
                 }
                 optionsElement.innerHTML = "";
