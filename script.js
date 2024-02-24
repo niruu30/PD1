@@ -1662,4 +1662,69 @@ const quizData = [
         ],
         answer: "A"
     },
+    {
+        id: "q137",
+        isMultiple: true,
+        imageUrl: "pics/img16.png",
+        question: "Assuming that naze is 8 String obtained by an <apex:inpotText> tag on 8 Visualforce page, which two SOQL queries performed are safe from SOQL injection? 'Choose 2 answers",
+        options: [
+            { letter: "A", text: "Option A" },
+            { letter: "B", text: "Option B" },
+            { letter: "C", text: "Option C" },
+            { letter: "D", text: "Option D" }
+        ],
+        answer: ["C", "D"]
+    },
+    {
+        id: "q136",
+        isMultiple: false,
+        imageUrl: "pics/img17.png",
+        question: "An Apex method, getAccounts, that returns a list of Accounts given a searchTern, is available for Lightning Web Components to use. What is the correct definition of a Lightning Web Component property that uses the getAccounts method?",
+        options: [
+            { letter: "A", text: "Option A" },
+            { letter: "B", text: "Option B" },
+            { letter: "C", text: "Option C" },
+            { letter: "D", text: "Option D" }
+        ],
+        answer: "D"
+    },
+    {
+        id: "q137",
+        isMultiple: false,
+        imageUrl: "pics/img18.png",
+        question: "Which Lightning code segment should be written to declare dependencies on a Lightning component, c:accountList, that is used in a Visualforce page?",
+        options: [
+            { letter: "A", text: "Option A" },
+            { letter: "B", text: "Option B" },
+            { letter: "C", text: "Option C" },
+            { letter: "D", text: "Option D" }
+        ],
+        answer: "A"
+    },
+    {
+        id: "q138",
+        isMultiple: false,
+        imageUrl: "pics/img19.png",
+        question: "A developer needs to implement a custom SOAP Web Service that is used by an external Web Application. The developer chooses to Include helper methods that are not used by the Web Application In the Implementation of the Web Service Class. Which code segment shows the correct declaration of the class and methods?",
+        options: [
+            { letter: "A", text: "Option A" },
+            { letter: "B", text: "Option B" },
+            { letter: "C", text: "Option C" },
+            { letter: "D", text: "Option D" }
+        ],
+        answer: "C"
+    },
+    {
+        id: "q139",
+        isMultiple: false,
+        imageUrl: "pics/img20.png",
+        question: "Which option would a developer use to display the Accounts created in the current week and the number of related Contacts using a debug statement in Apex?",
+        options: [
+            { letter: "A", text: "Option A" },
+            { letter: "B", text: "Option B" },
+            { letter: "C", text: "Option C" },
+            { letter: "D", text: "Option D" }
+        ],
+        answer: "A"
+    },
 ];
